@@ -16,7 +16,6 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   for (i in id) {
     ## change id to match the fileindex in the 3 digit format.
     csvfile <- paste(directory, "/", sprintf("%03d.csv", i), sep = "")
-    csvfile
     dataFrame <- rbind(dataFrame, read.csv(file= csvfile, sep=",", header = TRUE, stringsAsFactors=F))
   } 
   
