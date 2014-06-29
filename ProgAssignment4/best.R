@@ -16,6 +16,7 @@ best <- function(state, outcome) {
   ## rate
   outcome.state <- outcome.df[outcome.df$State == state, ]
   outcome.state[, c(11, 17, 23)] <- sapply(outcome.state[, c(11, 17, 23)], as.numeric)
+  ## sort according to name
   outcome.state <- outcome.state[order(outcome.state[, 2]), ]
   
   if (outcome == "heart attack") {
